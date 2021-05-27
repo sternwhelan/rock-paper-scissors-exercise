@@ -2,9 +2,17 @@
 
 import random
 
+import os
+
+import dotenv
+
+dotenv.load_dotenv()
+
+player_name = os.getenv("player_name")
+
+
 print("-------------------")
-player_name = input("Enter your name: ")
-print("Welcome to a game of rock, paper, scissors,", player_name,"!")
+print("Welcome to a game of rock, paper, scissors" + player_name + "!")
 print("-------------------")
 
 user_choice = input("Please choose one of 'rock', 'paper', 'scissors': ")
@@ -28,21 +36,22 @@ print("COMPUTER CHOICE: ", computer_choice)
 
 if user_choice == computer_choice:
     print("It's a tie, try again!")
+
 elif (user_choice == "scissors") and (computer_choice == "paper"):
-        print("Scissors cut paper, you win!")
+     print("Scissors cuts paper, you win!")
 elif (user_choice == "rock") and (computer_choice == "scissors"):
-        print("rock smashes scissors, you win!")
+    print("rock smashes scissors, you win!")
 elif (user_choice == "paper") and (computer_choice == "rock"):
-        print("Paper covers rock, you win!")
+    print("Paper covers rock, you win!")
 
 #COMPUTER WINNING SCENARIOS
 
 elif (user_choice == "scissors") and (computer_choice == "rock"):
-        print("rock smashes scissors, you lose!")
+    print("rock smashes scissors, you lose!")
 elif (user_choice == "rock") and (computer_choice == "paper"):
-        print("paper covers rock, you lose!")
+    print("paper covers rock, you lose!")
 elif (user_choice == "paper") and (computer_choice == "scissors"):
-        print("Scissors cuts paper, you lose!")
+    print("Scissors cuts paper, you lose!")
 
 print("THIS IS THE END OF OUR GAME. THANKS FOR PLAYING. PLEASE PLAY AGAIN!")
 
