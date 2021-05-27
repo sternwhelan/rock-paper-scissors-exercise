@@ -2,8 +2,11 @@
 
 import random
 
-print("Rock, Paper, Scissors, Shoot!")
 
+print("-------------------")
+player_name = input("Enter your name: ")
+print("Welcome to a game of rock, paper, scissors," player_name)
+print("-------------------")
 
 user_choice = input("Please choose one of 'rock', 'paper', 'scissors': ")
 
@@ -12,7 +15,7 @@ print("USER CHOICE: ", user_choice)
 
 
 if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissors"):
-    print("VALID. KEEP GOING")
+    print("Good Choice!")
 else:
     print("OOPS, invalid input. Please try again.")
     exit()
@@ -22,5 +25,34 @@ valid_options = ["rock", "paper", "scissors"]
 computer_choice = random.choice(valid_options)
 print("COMPUTER CHOICE: ", computer_choice)
 
+#USER WINNING AND TIE SCENARIOS
 
-print("THIS IS THE END OF OUR GAME. PLEASE PLAY AGAIN.")
+if user_choice == computer_choice:
+    print("It's a tie, try again!")
+elif user_choice == "scissors":
+    if computer_choice == "paper":
+        print("Scissors cut paper, you win!")
+elif user_choice == "rock":
+    if computer_choice == "scissors":
+        print("rock smashes scissors, you win!")
+elif user_choice == "paper":
+    if computer_choice == "rock":
+        print("Paper covers rock, you win!")
+
+#COMPUTER WINNING SCENARIOS
+
+elif user_choice == "scissors":
+    if computer_choice == "rock":
+        print("rock smashes scissors, you lose :(")
+elif user_choice == "rock":
+    if computer_choice == "paper":
+        print("paper covers rock, you lose :(")
+elif user_choice == "paper":
+    if computer_choice == "scissors":
+        print("Scissors cuts paper, you lose :(")
+
+print("THIS IS THE END OF OUR GAME.")
+
+
+#replay = input("Would you like to play again? y/n: ")
+#while(replay != "n") and (replay != "y"):
