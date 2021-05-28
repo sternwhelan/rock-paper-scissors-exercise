@@ -1,9 +1,7 @@
 # game.py
 
 import random
-
 import os
-
 import dotenv
 
 dotenv.load_dotenv()
@@ -12,7 +10,7 @@ player_name = os.getenv("player_name")
 
 
 print("-------------------")
-print("Welcome to a game of rock, paper, scissors" + player_name + "!")
+print("Welcome to a game of rock, paper, scissors, " + player_name + "!")
 print("-------------------")
 
 user_choice = input("Please choose one of 'rock', 'paper', 'scissors': ")
